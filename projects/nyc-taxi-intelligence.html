@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NYC Taxi Intelligence | Ilyass Saadi</title>
+    <meta name="description" content="Case study for NYC Taxi Intelligence, an end-to-end analytics project using Python, BigQuery, dbt, SQL, data quality tests, and BI dashboarding.">
+    <meta property="og:title" content="NYC Taxi Intelligence | Ilyass Saadi">
+    <meta property="og:description" content="End-to-end taxi operations analytics platform with BigQuery, dbt, data quality tests, and a published dashboard.">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="../assets/img/nyc-taxi-dashboard.png">
+    <meta name="theme-color" content="#111827">
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" data-header>
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html" aria-label="Ilyass Saadi home">
+          <span class="brand-mark">IS</span>
+          <span>Ilyass Saadi</span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+          <span class="sr-only">Open menu</span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links" id="primary-menu">
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="case-hero section">
+        <div class="case-hero-copy">
+          <a class="back-link" href="../index.html#projects">Back to projects</a>
+          <p class="eyebrow">Case study</p>
+          <h1>NYC Taxi Intelligence</h1>
+          <p class="headline">
+            A real analytics build: Python ingestion, BigQuery, dbt models, quality tests, KPI marts, and a published dashboard.
+          </p>
+          <div class="project-actions">
+            <a class="button primary" href="https://ilyassfcb11-lgtm.github.io/nyc-taxi-intelligence/" target="_blank" rel="noopener">Live Dashboard</a>
+            <a class="button" href="https://github.com/ilyassfcb11-lgtm/nyc-taxi-intelligence" target="_blank" rel="noopener">GitHub Repository</a>
+          </div>
+        </div>
+        <div class="case-hero-image">
+          <img src="../assets/img/nyc-taxi-dashboard.png" alt="NYC Taxi Intelligence dashboard screenshot" width="1290" height="1000">
+        </div>
+      </section>
+
+      <section class="section case-summary">
+        <article>
+          <span class="timeline-label">Question</span>
+          <h2>Where should a fleet focus attention?</h2>
+          <p>
+            I treated the project like an operations problem: identify where taxi demand is strongest,
+            where revenue is concentrated, which hours need coverage, and which high-volume routes show weaker efficiency.
+          </p>
+        </article>
+        <article>
+          <span class="timeline-label">Scope</span>
+          <h2>April and May 2026 Yellow Taxi data</h2>
+          <p>
+            The modeled layer covers 7.59 million valid trips from official NYC TLC records, with KPI tables built for dashboard and Tableau-ready exports.
+          </p>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Pipeline</p>
+          <h2>From source files to dashboard tables</h2>
+        </div>
+        <div class="architecture-flow" aria-label="Project architecture">
+          <span>NYC TLC files</span>
+          <span>Python ingestion</span>
+          <span>BigQuery raw tables</span>
+          <span>dbt staging</span>
+          <span>Fact and dimension tables</span>
+          <span>KPI marts</span>
+          <span>Dashboard</span>
+        </div>
+      </section>
+
+      <section class="section metrics-grid" aria-label="Project metrics">
+        <div class="metric-card">
+          <strong>7.59M</strong>
+          <span>modeled trips</span>
+        </div>
+        <div class="metric-card">
+          <strong>$230.2M</strong>
+          <span>modeled pickup revenue</span>
+        </div>
+        <div class="metric-card">
+          <strong>265</strong>
+          <span>taxi zones monitored</span>
+        </div>
+        <div class="metric-card">
+          <strong>45</strong>
+          <span>passing dbt tests</span>
+        </div>
+        <div class="metric-card">
+          <strong>9</strong>
+          <span>dbt models</span>
+        </div>
+        <div class="metric-card">
+          <strong>250</strong>
+          <span>route alerts</span>
+        </div>
+      </section>
+
+      <section class="section case-grid">
+        <article class="case-card">
+          <h2>Modeling</h2>
+          <p>
+            Raw BigQuery tables are transformed into cleaned staging tables, reusable fact and dimension tables,
+            and KPI marts for demand, revenue efficiency, operational pressure, and route analysis.
+          </p>
+        </article>
+        <article class="case-card">
+          <h2>Data quality</h2>
+          <p>
+            The dbt test suite checks completeness, uniqueness, relationships, and business rules such as positive
+            trip distance, positive revenue, valid duration, and KPI score ranges.
+          </p>
+        </article>
+        <article class="case-card">
+          <h2>CI/CD</h2>
+          <p>
+            GitHub Actions checks the project on push and pull request by installing dependencies, compiling ingestion scripts,
+            and validating the dbt project structure.
+          </p>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Insights</p>
+          <h2>What the dashboard makes visible</h2>
+        </div>
+        <div class="insight-list">
+          <article>
+            <h3>Manhattan drives trip volume</h3>
+            <p>Manhattan represents about 86.5% of modeled pickup trips, so coverage planning needs to keep that core market visible.</p>
+          </article>
+          <article>
+            <h3>Airport zones matter for revenue</h3>
+            <p>Queens has a smaller trip share, but airport zones such as JFK and LaGuardia contribute a larger revenue share.</p>
+          </article>
+          <article>
+            <h3>Evening demand needs attention</h3>
+            <p>The busiest pickup hours appear in late afternoon and evening, which supports schedule and availability planning.</p>
+          </article>
+          <article>
+            <h3>Route alerts add operational detail</h3>
+            <p>The route mart flags high-volume, lower-efficiency routes so the analysis does not stop at borough or zone totals.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section dashboard-showcase">
+        <div>
+          <p class="eyebrow">Dashboard</p>
+          <h2>Published operations dashboard</h2>
+          <p>
+            The dashboard brings together executive KPIs, fleet priority zones, borough portfolio views,
+            capacity pressure hotspots, hourly demand, revenue efficiency, and route alerts.
+          </p>
+          <a class="button primary" href="https://ilyassfcb11-lgtm.github.io/nyc-taxi-intelligence/" target="_blank" rel="noopener">Open Live Dashboard</a>
+        </div>
+        <img src="../assets/img/nyc-taxi-dashboard.png" alt="Published NYC Taxi Intelligence dashboard preview" width="1290" height="1000">
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; <span data-year></span> Ilyass Saadi. NYC Taxi Intelligence case study.</p>
+    </footer>
+
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
